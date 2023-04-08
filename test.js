@@ -1,6 +1,5 @@
 const create_rss = require("./create-rss");
 
 const rss = new create_rss;
-console.log(rss);
-console.log(rss.name);
+rss.setChannel("MY", "https://www.google.com", "This is a test", "en");
 console.log(rss.generate());

@@ -9,6 +9,15 @@ module.exports = class CreateRSS {
         this.setOptions({});
     }
 
+    setChannel(title, link, description, language) {
+        this.setTitle(title);
+        this.setLink(link);
+        this.setDescription(description);
+        this.setLanguage(language);
+
+        return this;
+    }
+
     setOptions(options) {
         if (!options) throw new Error("Options are required");
 
@@ -43,6 +52,14 @@ module.exports = class CreateRSS {
         return this;
     }
 
+    setLanguage(language) {
+        if (!language) throw new Error("Language is required");
+
+        this.channel.language = language;
+
+        return this;
+    }
+
     addItem(title, link, description) {
         if (!title) throw new Error("Title is required");
         if (!link) link = "";
@@ -59,18 +76,16 @@ module.exports = class CreateRSS {
     addItems(items) {
         if (!items) throw new Error("Items are required");
 
-        for (let i = 0; i < items.length; i++) {
+        for (let i = 0; i < items.length; i++)
             this.addItem(items[i].title, items[i].link, items[i].description);
-        }
 
         return this;
     }
 
     generateItems() {
         let temp = "";
-        for (let i = 0; i < this.items.length; i++) {
+        for (let i = 0; i < this.items.length; i++)
             temp += "\t\t<item>\n\t\t\t<title>" + this.items[i].title + "</title>\n\t\t\t<link>" + this.items[i].link + "</link>\n\t\t\t<description>" + this.items[i].description + "</description>\n\t\t</item>\n";
-        }
         return temp;
     }
 
