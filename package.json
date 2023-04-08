@@ -1,0 +1,26 @@
+{
+	"name": "create-rss-nodejs",
+	"version": "1.0.0",
+	"description": "Create RSS feed XML file in JavaScript without any library and stress.",
+	"homepage": "https://github.com/BaseMax/create-rss-nodejs",
+	"bugs": "https://github.com/BaseMax/create-rss-nodejs/issues",
+	"author": {
+		"name": "Max Base",
+		"email": "maxbasecode@gmail.com",
+		"url": "https://maxbase.org"
+	},
+	"main": "create-rss.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/BaseMax/create-rss-nodejs.git"
+	},
+	"dependencies": {},
+	"engines": {
+		"node": ">=0.8"
+	},
+	"licenses": [
+		{
+			"type": "GPL3.0"
+		}
+	]
+}
